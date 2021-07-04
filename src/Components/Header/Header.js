@@ -5,13 +5,13 @@ const Header = () => {
   return (
     <Container>
       <Navbar
-        className="bg-dark d-flex justify-content-between align-items-center"
+        className="bg-light d-flex justify-content-between align-items-center"
         expand="lg"
         fixed="top"
         variant="light"
       >
-        <Navbar.Brand className="bg-danger" href="#home">
-          <h1>Dailay Shopping</h1>
+        <Navbar.Brand className="ml-3 p-2" href="#home">
+          <h1 style={{ fontFamily: "Bebas Neue" }}>Dailay Shopping</h1>
         </Navbar.Brand>
         <Nav className="ml-5 pl-5  bg-success">
           <Nav.Link href="#home">Home</Nav.Link>
