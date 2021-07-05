@@ -2,6 +2,9 @@ import React from "react";
 import "./Header.css";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
 const Header = () => {
+  const handleLogIn = () => {
+    console.log("log in clicked");
+  };
   return (
     <Container>
       <Navbar
@@ -28,7 +31,11 @@ const Header = () => {
           <Nav.Link className="mr-3 pr-3 customFont" to="/Deals">
             Deals
           </Nav.Link>
-          <Button className="mr-3 pr-3  customColor" to="/Login">
+          <Button
+            onClick={handleLogIn}
+            className="mr-3 pr-3  customColor"
+            to="/Login"
+          >
             LogIn
           </Button>
         </Nav>

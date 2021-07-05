@@ -1,22 +1,24 @@
 import React from "react";
 import "./Home.css";
 import Header from "../Header/Header";
-import { InputGroup, FormControl, Container, Row } from "react-bootstrap";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 const Home = () => {
   return (
     <div className="container">
       <div className="row">
         <Header />
       </div>
-      <div className="row">
-        <InputGroup size="lg" className="mb-3 w-50">
-          <FormControl
-            placeholder="Recipient's username"
-            aria-label="Recipient's username"
-            aria-describedby="basic-addon2"
-          />
-          <InputGroup.Text id="basic-addon2">Search</InputGroup.Text>
-        </InputGroup>
+      <div className=" ml-5 pl-5">
+        <div className="row mt-5 ml-5 pl-5">
+          <InputGroup size="lg" className="mb-3 w-50 ml-5 pl-5">
+            <FormControl
+              className="ml-5 pl-5"
+              placeholder="Search Items"
+              aria-label="searchInput"
+            />
+            <Button className="customColor ">Search</Button>
+          </InputGroup>
+        </div>
       </div>
     </div>
   );
