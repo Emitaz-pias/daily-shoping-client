@@ -8,7 +8,9 @@ const Home = () => {
       <br />
       <br />
       <br />
-      <h2>this is home page now working</h2>
+      <h2 className="text-center fst-italic">
+        <i>hello</i> this is home page now working
+      </h2>
     </div>
   );
 };
