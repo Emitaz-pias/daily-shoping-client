@@ -23,6 +23,7 @@ const Home = () => {
               onKeyUp={(event) => {
                 if (event.keyCode === 13) {
                   handleSearchBtn();
+                  event.target.value = " ";
                 }
               }}
             />
