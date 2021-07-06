@@ -19,16 +19,16 @@ const Header = () => {
           </h1>
         </Navbar.Brand>
         <Nav className="mr-2 pr-3 p-2 mb-2 h6">
-          <Nav.Link className=" mr-3 pr-3  customFont" to="/Home">
+          <Nav.Link className=" mr-3 pr-3  customFont" to="/home">
             Home
           </Nav.Link>
-          <Nav.Link className=" mr-3 pr-3 customFont" to="/Oders">
+          <Nav.Link className=" mr-3 pr-3 customFont" to="/orders">
             Orders
           </Nav.Link>
-          <Nav.Link className="mr-3 pr-3 customFont" to="/Admin">
+          <Nav.Link className="mr-3 pr-3 customFont" to="/admin">
             Admin
           </Nav.Link>
-          <Nav.Link className="mr-3 pr-3 customFont" to="/Deals">
+          <Nav.Link className="mr-3 pr-3 customFont" to="/deals">
             Deals
           </Nav.Link>
           <Button
