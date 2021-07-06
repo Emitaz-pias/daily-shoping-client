@@ -1,13 +1,15 @@
 import React from "react";
 import "./Home.css";
 import Header from "../Header/Header";
+import fakeData from "../fakeData/fakeData";
+import Cards from "../Cards/Cards";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
+
 const Home = () => {
   const handleSearchBtn = () => {
     const searchedText = document.getElementById("searchInputField").value;
     console.log(searchedText);
   };
-
   return (
     <div className="container">
       <div className="">
@@ -33,6 +35,9 @@ const Home = () => {
           </InputGroup>
         </div>
       </div>
+      {fakeData.map((pd) => (
+        <Cards product={pd} />
+      ))}
     </div>
   );
 };
