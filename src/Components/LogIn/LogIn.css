@@ -1,7 +1,7 @@
 .logInForm {
   width: 30em;
   height: 25em;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 .inputStyles {
   border-top: none !important;
@@ -24,6 +24,6 @@
 }
 .createAccFrom {
   border: 1px solid black;
-  height: 30em;
+  height: 27em;
   width: 30em;
 }
