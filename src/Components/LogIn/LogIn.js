@@ -54,10 +54,49 @@ const LogIn = () => {
           </div>
         </div>
       </div>
-      <div id="createAccountWrapper" className="m-5 p-2">
-        <div className=" ml-5 p-5">
+      <div id="createAccountWrapper" className="ml-5  pl-5">
+        <div className=" m-5 pl-5">
           <div className="createAccFrom ml-5">
-            <h3 className="ml-2 p-3">Create an account</h3>
+            <h3 className="ml-3 p-3">Create an account</h3>
+            <div className="p-5">
+              <form action="">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="inputStyles form-control"
+                />
+                <br />
+                <input
+                  type="text"
+                  placeholder="Email"
+                  className="inputStyles form-control"
+                />
+                <br />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  className="inputStyles form-control"
+                />
+                <br />
+                <input
+                  className="inputStyles form-control"
+                  type="password"
+                  placeholder="Confirm Password"
+                />
+              </form>
+              <br />
+              <Button className="customButton">Create Account</Button>
+              <p className="mt-3 text-center">
+                Already have an account?{" "}
+                <a
+                  onClick={handleToggleForm}
+                  className="customText"
+                  href="#createAccount"
+                >
+                  Login
+                </a>{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>
