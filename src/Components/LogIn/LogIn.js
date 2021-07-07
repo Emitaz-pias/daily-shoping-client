@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Button } from "react-bootstrap";
 
 import "./LogIn.css";
-import PopUpSign from "./PopUpSign";
+import PopUpSign from "../PopUp/PopUpSign";
 const LogIn = () => {
   const [existingUser, setexixtingUser] = useState(false);
   const [newUser, setNewUser] = useState(false);
