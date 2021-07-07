@@ -1,0 +1,29 @@
+.logInForm {
+  width: 30em;
+  height: 25em;
+  border: 2px solid black;
+}
+.inputStyles {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid gray;
+  width: 25em;
+}
+.customButton {
+  background-color: #71ba58 !important;
+  width: 24em;
+}
+.customText {
+  color: #71ba58;
+  border-bottom: 1px solid #71ba58;
+}
+.customText:hover {
+  color: #71ba58;
+  text-decoration: none;
+}
+.createAccFromWrapper {
+  border-top: 1px solid red;
+  height: 30em;
+  width: 30em;
+}

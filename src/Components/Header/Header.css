@@ -5,3 +5,7 @@
 .customColor {
   background-color: #71ba58 !important;
 }
+.customLink {
+  color: inherit !important;
+  text-decoration: none !important;
+}

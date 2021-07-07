@@ -29,7 +29,13 @@ const Home = () => {
                 }
               }}
             />
-            <Button onClick={handleSearchBtn} className="customColor ">
+            <Button
+              onClick={() => {
+                handleSearchBtn();
+                document.getElementById("searchInputField").value = "";
+              }}
+              className="customColor "
+            >
               Search
             </Button>
           </InputGroup>
