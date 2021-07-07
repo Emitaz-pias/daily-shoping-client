@@ -10,6 +10,10 @@
   border-bottom: 1px solid gray;
   width: 25em;
 }
+::placeholder {
+  color: black !important;
+  font-weight: 500;
+}
 .customButton {
   background-color: #71ba58 !important;
   width: 24em;
@@ -26,4 +30,29 @@
   border: 1px solid black;
   height: 27em;
   width: 30em;
+}
+
+.hrTextContainer {
+  display: flex;
+  width: 40em;
+}
+.hrBefore,
+.hrAfter {
+  flex: auto;
+}
+.hrLine1 {
+  width: 60%;
+  margin-left: 5em;
+  padding-left: 2em;
+  background-color: black;
+}
+.hrLine2 {
+  width: 60%;
+  margin-right: 5em;
+  padding-right: 2em;
+  background-color: black;
+}
+.hrText {
+  text-align: center;
+  margin: 0 1em;
 }

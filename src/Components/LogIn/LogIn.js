@@ -8,7 +8,7 @@ const LogIn = () => {
   return (
     <Container>
       {!newUser && (
-        <div id="logInFormWrapper">
+        <div id="createAccountWrapper">
           <div className="d-flex justify-content-around">
             <div className="m-4 p-2 logInForm">
               <h3 className="ml-5">Login</h3>
@@ -44,7 +44,7 @@ const LogIn = () => {
                   <a
                     onClick={() => setNewUser(true)}
                     className="customText"
-                    href="#createAccount"
+                    href="#createAccountWrapper"
                   >
                     Create an Account
                   </a>
@@ -92,7 +92,7 @@ const LogIn = () => {
                   <a
                     onClick={() => setNewUser(false)}
                     className="customText"
-                    href="#createAccount"
+                    href="#createAccountWrapper"
                   >
                     Login
                   </a>{" "}
@@ -102,6 +102,17 @@ const LogIn = () => {
           </div>
         </div>
       )}
+      <div className="d-flex justify-content-center">
+        <div className="hrTextContainer">
+          <div className="hrBefore">
+            <hr className="hrLine1" />
+          </div>
+          <div className="hrText">or</div>
+          <div className="hrAfter">
+            <hr className="hrLine2" />
+          </div>
+        </div>
+      </div>
     </Container>
   );
 };
