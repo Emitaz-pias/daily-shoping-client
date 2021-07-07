@@ -22,8 +22,8 @@
   color: #71ba58;
   text-decoration: none;
 }
-.createAccFromWrapper {
-  border-top: 1px solid red;
+.createAccFrom {
+  border: 1px solid black;
   height: 30em;
   width: 30em;
 }

@@ -54,6 +54,13 @@ const LogIn = () => {
           </div>
         </div>
       </div>
+      <div id="createAccountWrapper" className="m-5 p-2">
+        <div className=" ml-5 p-5">
+          <div className="createAccFrom ml-5">
+            <h3 className="ml-2 p-3">Create an account</h3>
+          </div>
+        </div>
+      </div>
     </Container>
   );
 };
