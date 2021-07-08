@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { Container, Button } from "react-bootstrap";
-
 import "./LogIn.css";
 import PopUpSign from "../PopUp/PopUpSign";
+import { Link } from "react-router-dom";
 const LogIn = () => {
   const [existingUser, setexixtingUser] = useState(false);
   const [newUser, setNewUser] = useState(false);
   return (
     <Container>
+      <div className="mt-3">
+        <h1 style={{ color: "#363958", fontFamily: "Bebas Neue" }}>
+          <Link className="customLink" to="/">
+            {" "}
+            Dailay Shopping
+          </Link>
+        </h1>
+      </div>
       {!newUser && (
         <div id="createAccountWrapper">
           <div className="d-flex justify-content-around">
-            <div className="m-4 p-2 logInForm">
+            <div className="p-2 logInForm">
               <h3 className="ml-5">Login</h3>
-              <div className="p-5">
+              <div className="p-4">
                 <form action="">
                   <input
                     className="inputStyles form-control"
@@ -57,10 +65,10 @@ const LogIn = () => {
       )}
       {newUser && (
         <div id="createAccountWrapper">
-          <div className="d-flex align-items-center justify-content-around p-1">
-            <div className="createAccFrom mt-4">
+          <div className="d-flex align-items-center justify-content-around">
+            <div className="createAccFrom">
               <h3 className="ml-5">Create an account</h3>
-              <div className="p-5">
+              <div className="p-4">
                 <form action="">
                   <input
                     type="text"

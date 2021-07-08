@@ -1,7 +1,7 @@
 .customPopUpBtn {
   background-color: transparent;
-  width: 22em;
-  border-radius: 50%;
+  width: 20em;
+  border-radius: 50px !important;
 }
 .buttonImg {
   width: 9%;

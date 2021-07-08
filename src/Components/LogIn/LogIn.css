@@ -1,6 +1,6 @@
 .logInForm {
   width: 30em;
-  height: 25em;
+  height: 23em;
   border: 1px solid black;
 }
 .inputStyles {
@@ -16,7 +16,7 @@
 }
 .customButton {
   background-color: #71ba58 !important;
-  width: 24em;
+  width: 26em;
 }
 .customText {
   color: #71ba58;
@@ -28,7 +28,7 @@
 }
 .createAccFrom {
   border: 1px solid black;
-  height: 27em;
+  height: 25em;
   width: 30em;
 }
 
