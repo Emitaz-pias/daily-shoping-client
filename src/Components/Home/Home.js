@@ -17,10 +17,14 @@ const Home = () => {
       </div>
       <div className="ml-5 pl-5">
         <div className="mt-5 ml-5 pl-5">
-          <InputGroup size="lg" className="mb-3 w-50 ml-5 pl-5">
+          <InputGroup
+            id="searchContainer"
+            size="lg"
+            className="mb-3 w-50 ml-5 pl-5"
+          >
             <FormControl
               id="searchInputField"
-              placeholder="Search Items"
+              placeholder="&#xF002; Search Items  "
               aria-label="searchInput"
               onKeyUp={(event) => {
                 if (event.keyCode === 13) {
@@ -30,11 +34,12 @@ const Home = () => {
               }}
             />
             <Button
+              id="searchButton"
               onClick={() => {
                 handleSearchBtn();
                 document.getElementById("searchInputField").value = "";
               }}
-              className="customColor "
+              className="customColor"
             >
               Search
             </Button>

@@ -1,0 +1,17 @@
+#searchContainer {
+  width: 35em !important;
+}
+#searchInputField {
+  background-color: #f1f1f1;
+}
+#searchInputField::placeholder {
+  color: gray !important;
+  font-weight: 400;
+}
+#searchInputField {
+  font-family: "FontAwesome";
+}
+
+#searchButton {
+  width: 10em;
+}
