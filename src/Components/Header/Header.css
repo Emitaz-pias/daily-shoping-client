@@ -2,6 +2,10 @@
   font-weight: 700;
   color: #3c3c3c !important;
 }
+.customHeading {
+  color: "#363958" !important;
+  font-family: "Bebas Neue";
+}
 .customColor {
   background-color: #71ba58 !important;
 }
