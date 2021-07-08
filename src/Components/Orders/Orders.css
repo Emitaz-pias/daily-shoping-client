@@ -1,6 +1,3 @@
 .detailsContainer {
-  border: 1px solid red;
-}
-.qtyPriceContainer {
-  border: 1px solid green;
+  color: gray;
 }
