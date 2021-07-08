@@ -45,16 +45,15 @@ const Header = () => {
               Deals
             </Link>
           </Nav.Link>
-          <Button
-            onClick={handleLogIn}
-            className="mr-3 pr-3  customColor"
-            to="/Login"
-          >
-            <Link className="customLink" to="/logIn">
-              {" "}
+          <Link className="customLink border border-danger" to="/logIn">
+            <Button
+              onClick={handleLogIn}
+              className=" customColor logInBtn"
+              to="/logIn"
+            >
               LogIn
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Nav>
       </Navbar>
     </Container>

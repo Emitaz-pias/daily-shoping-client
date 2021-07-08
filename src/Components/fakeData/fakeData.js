@@ -32,7 +32,7 @@ const products = [
   {
     productName: "Bombay Sweets Mr. Twists",
     quantity: "25 gm",
-    price: "$2.64",
+    price: "$264",
     productImage: "https://i.ibb.co/2ZTJmxY/image-37.png",
   },
   {
@@ -50,7 +50,7 @@ const products = [
   {
     productName: "Prachute Coconut Oil",
     quantity: "200ml",
-    price: "$6.34",
+    price: "$634",
     productImage: "https://i.ibb.co/x15swHF/image-40.png",
   },
 ];

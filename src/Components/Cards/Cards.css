@@ -1,0 +1,11 @@
+.customTextColor {
+  color: #71ba58;
+}
+.customBuyNowButton {
+  background-color: #71ba58 !important;
+  border-radius: 8px !important;
+  padding: 8px 25px !important;
+}
+.customLineHeight {
+  line-height: 2 !important;
+}
