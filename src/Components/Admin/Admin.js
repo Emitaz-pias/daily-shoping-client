@@ -1,9 +1,10 @@
 import React from "react";
-
+import { Container } from "react-bootstrap";
+import Sidebar from "../Sidebar/Sidebar";
 const Admin = () => {
   return (
     <div>
-      <h1>manage your products Admin!!!</h1>
+      <Sidebar></Sidebar>
     </div>
   );
 };

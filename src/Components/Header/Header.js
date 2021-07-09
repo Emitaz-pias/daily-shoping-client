@@ -17,7 +17,6 @@ const Header = () => {
         <Navbar.Brand className="ml-2 mt-1" href="#home">
           <h1 style={{ color: "#363958", fontFamily: "Bebas Neue" }}>
             <Link className="customLink" to="/">
-              {" "}
               Dailay Shopping
             </Link>
           </h1>
@@ -25,8 +24,7 @@ const Header = () => {
         <Nav className="mr-2 pr-3 p-2 mb-2 h6">
           <Nav.Link className=" mr-3 pr-3  customFont" to="/home">
             <Link className="customLink" to="/home">
-              {" "}
-              Home{" "}
+              Home
             </Link>
           </Nav.Link>
           <Nav.Link className=" mr-3 pr-3 customFont">
