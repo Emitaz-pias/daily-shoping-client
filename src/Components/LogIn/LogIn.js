@@ -2,10 +2,27 @@ import React, { useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import "./LogIn.css";
 import PopUpSign from "../PopUp/PopUpSign";
-import { Link } from "react-router-dom";
+import { UsersContext } from "../../App";
+import { useContext } from "react";
+import { Link, useHistory, useLocation } from "react-router-dom";
+
 const LogIn = () => {
+  const history = useHistory();
+  const location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
+
   const [existingUser, setexixtingUser] = useState(false);
   const [newUser, setNewUser] = useState(false);
+  const { user } = useContext(UsersContext);
+  const [loggedInUser, setLoggedInUser] = user;
+  const handleLogInBtn = () => {
+    setLoggedInUser({
+      name: "Emi",
+      email: "emi@mail",
+    });
+    history.replace(from);
+  };
+  console.log(loggedInUser);
   return (
     <Container>
       <div className="mt-3">
@@ -47,7 +64,9 @@ const LogIn = () => {
                   </span>
                 </form>{" "}
                 <br />
-                <Button className="customButton">Login</Button>
+                <Button onClick={handleLogInBtn} className="customButton">
+                  Login
+                </Button>
                 <p className="mt-3 text-center">
                   Don't have an account?
                   <a
