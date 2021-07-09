@@ -10,8 +10,6 @@ const LogIn = () => {
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
-
-  const [existingUser, setexixtingUser] = useState(false);
   const [newUser, setNewUser] = useState(false);
   const { user } = useContext(UsersContext);
   const [loggedInUser, setLoggedInUser] = user;

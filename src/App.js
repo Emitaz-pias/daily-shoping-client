@@ -4,7 +4,7 @@ import Orders from "./Components/Orders/Orders";
 import Admin from "./Components/Admin/Admin";
 import LogIn from "./Components/LogIn/LogIn";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotFound from "./Components/NotFound/NotFound";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import { createContext, useState } from "react";
