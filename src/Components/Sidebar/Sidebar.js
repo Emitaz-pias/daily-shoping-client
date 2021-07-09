@@ -28,8 +28,8 @@ const Sidebar = () => {
           </h1>
         </NavLink>
         <div className="links d-flex justify-content-between mt-2 ml-4 p-5">
-          <h6>icon</h6>
           <NavLink className=" customLink" to="/">
+            <i className="fas fa-th-large"></i>
             <h6>Manage Products </h6>
           </NavLink>
         </div>
