@@ -20,13 +20,13 @@ const Sidebar = () => {
       <CDBSidebar
         style={{ width: "22vw" }}
         textColor="#fff"
-        backgroundColor="#333"
+        backgroundColor="#203D37"
       >
-        <CDBSidebarHeader>
-          <NavLink className="customLink" to="/">
-            <h2>Daily Shopping</h2>
-          </NavLink>
-        </CDBSidebarHeader>
+        <NavLink className="mt-4 ml-5 customLink" to="/">
+          <h1 style={{ color: "#ffff", fontFamily: "Bebas Neue" }}>
+            Daily Shopping
+          </h1>
+        </NavLink>
       </CDBSidebar>
     </div>
   );
