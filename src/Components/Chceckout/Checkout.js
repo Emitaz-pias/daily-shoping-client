@@ -3,7 +3,17 @@ import "./Checkout.css";
 import { Container, Button } from "react-bootstrap";
 import Header from "../../Components/Header/Header";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+
 const Checkout = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+  const handleCheckOut = () => console.log("thi si chelkout");
   return (
     <Container>
       <Header />
@@ -44,12 +54,27 @@ const Checkout = () => {
         </div>
       </div>
       <div className="d-flex justify-content-end">
-        <Button className="mr-3 pr-3  customColor" to="/checkout">
-          <Link className="customLink" to="/chekout">
-            checkout
-          </Link>
+        <Button
+          onClick={handleCheckOut}
+          className="mr-3 pr-3  customColor"
+          to="/checkout"
+        >
+          <Link className="customLink">checkout</Link>
         </Button>
       </div>
+      {/* orderSubmitForm */}
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {/* register your input into the hook by invoking the "register" function */}
+        <input defaultValue="test" {...register("example")} />
+
+        {/* include validation with required or other standard HTML validation rules */}
+        <input {...register("exampleRequired", { required: true })} />
+        {/* errors will return when field validation fails  */}
+        {errors.exampleRequired && <span>This field is required</span>}
+
+        <input type="submit" />
+      </form>
     </Container>
   );
 };

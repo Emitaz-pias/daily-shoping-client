@@ -4,3 +4,8 @@
 .boldedFont {
   font-weight: 700;
 }
+.customWidth {
+  width: 100vw;
+  border: 2px solid green;
+  margin-right: 1em;
+}
