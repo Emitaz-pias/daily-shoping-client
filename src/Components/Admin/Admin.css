@@ -4,6 +4,9 @@
 .customHeader {
   font-weight: 700;
 }
+#manageProducts {
+  display: none;
+}
 .customFileInput {
   display: none;
 }
