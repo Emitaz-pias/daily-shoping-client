@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotFound from "./Components/NotFound/NotFound";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import { createContext, useState } from "react";
+import Checkout from "./Components/Chceckout/Checkout";
 export const UsersContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -21,6 +22,9 @@ function App() {
           <Route path="/login">
             <LogIn></LogIn>
           </Route>
+          <PrivateRoute path="/checkout">
+            <Checkout />
+          </PrivateRoute>
           <PrivateRoute path="/orders">
             <Orders></Orders>
           </PrivateRoute>

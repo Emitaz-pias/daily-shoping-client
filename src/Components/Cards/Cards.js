@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Cards.css";
 const Cards = (props) => {
   const { productName, price, quantity, productImage } = props.product;
@@ -21,7 +22,9 @@ const Cards = (props) => {
           </Card.Body>
           <div className="d-flex justify-content-between align-items-center ">
             <h2 className="customTextColor">{price}</h2>
-            <Button className="customBuyNowButton">Buy now</Button>
+            <Link to="/checkout">
+              <Button className="customBuyNowButton">Buy now</Button>
+            </Link>
           </div>
         </Card>
       </div>
