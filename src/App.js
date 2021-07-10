@@ -12,8 +12,14 @@ import Checkout from "./Components/Chceckout/Checkout";
 export const UsersContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [selectedProduct, setSeltectedProduct] = useState({ name: "alu" });
   return (
-    <UsersContext.Provider value={{ user: [loggedInUser, setLoggedInUser] }}>
+    <UsersContext.Provider
+      value={{
+        user: [loggedInUser, setLoggedInUser],
+        product: [selectedProduct, setSeltectedProduct],
+      }}
+    >
       <Router>
         <Switch>
           <Route path="/home">

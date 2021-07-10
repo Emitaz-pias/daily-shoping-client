@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./Orders.css";
 import Header from "../../Components/Header/Header";
 import { Link } from "react-router-dom";
@@ -7,9 +7,10 @@ const Orders = () => {
   return (
     <div>
       <Header />
-      <div style={{ border: "1px solid red" }}>
+      {/* full order page */}
+      <div>
         <h2 className="mt-2 mb-3" style={{ color: "#363958" }}>
-          Your Orders!!
+          here is Your Orders!!
         </h2>
         {/* full shadow box */}
         <div className="row  shadow p-3 mb-5 bg-body rounded">

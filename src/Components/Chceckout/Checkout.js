@@ -4,8 +4,13 @@ import { Container, Button } from "react-bootstrap";
 import Header from "../../Components/Header/Header";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { UsersContext } from "../../App";
 
 const Checkout = () => {
+  const { product } = useContext(UsersContext);
+  const [selectProduct] = product;
+  console.log("from checkout", selectProduct);
   const {
     register,
     handleSubmit,

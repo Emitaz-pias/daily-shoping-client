@@ -1,9 +1,18 @@
 import React from "react";
+import { useContext } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { UsersContext } from "../../App";
 import "./Cards.css";
 const Cards = (props) => {
   const { productName, price, quantity, productImage } = props.product;
+  const { product } = useContext(UsersContext);
+  const [selectProduct, setSelectProduct] = product;
+  const handleBuyNow = (pd) => {
+    // pass the product selected by buy now button
+    setSelectProduct(pd);
+  };
+
   return (
     <Container>
       <div
@@ -23,7 +32,12 @@ const Cards = (props) => {
           <div className="d-flex justify-content-between align-items-center ">
             <h2 className="customTextColor">{price}</h2>
             <Link to="/checkout">
-              <Button className="customBuyNowButton">Buy now</Button>
+              <Button
+                onClick={() => handleBuyNow(props.product)}
+                className="customBuyNowButton border border-danger"
+              >
+                Buy now
+              </Button>
             </Link>
           </div>
         </Card>
