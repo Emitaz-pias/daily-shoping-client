@@ -3,6 +3,9 @@ import "./Header.css";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 const Header = () => {
+  const user = {
+    nae: "pias",
+  };
   const handleLogIn = () => {
     console.log("log in clicked");
   };
@@ -43,15 +46,19 @@ const Header = () => {
               Deals
             </Link>
           </Nav.Link>
-          <Link className="customLink" to="/logIn">
-            <Button
-              onClick={handleLogIn}
-              className=" customColor logInBtn"
-              to="/logIn"
-            >
-              LogIn
-            </Button>
-          </Link>
+          {user.name ? (
+            <img src="/" alt="an image"></img>
+          ) : (
+            <Link className="customLink" to="/logIn">
+              <Button
+                onClick={handleLogIn}
+                className=" customColor logInBtn"
+                to="/logIn"
+              >
+                LogIn
+              </Button>
+            </Link>
+          )}
         </Nav>
       </Navbar>
     </Container>
