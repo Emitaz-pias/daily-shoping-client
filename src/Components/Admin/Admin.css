@@ -5,7 +5,9 @@
   font-weight: 700;
 }
 #manageProducts {
-  display: none;
+}
+.manageProductsHeader {
+  background-color: #f5f6fa;
 }
 .customFileInput {
   display: none;

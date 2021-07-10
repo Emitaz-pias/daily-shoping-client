@@ -21,24 +21,136 @@ const Admin = () => {
         </div>
         <div className="col">
           <div id="manageProducts">
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
+            <div className="shadow mt-2  p-3 mb-5 bg-body rounded">
+              <h2 style={{ fontWeight: 700 }}>Manage Products</h2>
+            </div>
+            <div className="shadow  p-3 mb-3 bg-body rounded row manageProductsHeader">
+              <div className="col-md-4">
+                <h5 className="">Product Name</h5>
+              </div>
+              <div className="col-md-4">
+                <h5>Weight</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Price</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Action</h5>
+              </div>
+            </div>
+
+            <div className="">
+              {/* single product data row */}
+              <div className="row">
+                <div className="col-md-4">
+                  <h5 className="">Product Name is longer than anythin else</h5>
+                </div>
+                <div className="col-md-4">
+                  <h5>Weight is soo bighhssdkl;fasdfklsdfjkl</h5>
+                </div>
+                <div className="col-md-2">
+                  <h5>Price</h5>
+                </div>
+                <div className="col-md-2">
+                  <h5>Action</h5>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-md-4">
+                  <h5 className="">Product Name is longer than anythin else</h5>
+                </div>
+                <div className="col-md-4">
+                  <h5>Weight is soo bighhssdkl;fasdfklsdfjkl</h5>
+                </div>
+                <div className="col-md-2">
+                  <h5>Price</h5>
+                </div>
+                <div className="col-md-2">
+                  <h5>Action</h5>
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-4">
+                <h5 className="">Product Name is longer than anythin else</h5>
+              </div>
+              <div className="col-md-4">
+                <h5>Weight is soo bighhssdkl;fasdfklsdfjkl</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Price</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Action</h5>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-4">
+                <h5 className="">Product Name is longer than anythin else</h5>
+              </div>
+              <div className="col-md-4">
+                <h5>Weight is soo bighhssdkl;fasdfklsdfjkl</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Price</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Action</h5>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-4">
+                <h5 className="">Product Name is longer than anythin else</h5>
+              </div>
+              <div className="col-md-4">
+                <h5>Weight is soo bighhssdkl;fasdfklsdfjkl</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Price</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Action</h5>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-4">
+                <h5 className="">Product Name is longer than anythin else</h5>
+              </div>
+              <div className="col-md-4">
+                <h5>Weight is soo bighhssdkl;fasdfklsdfjkl</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Price</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Action</h5>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-4">
+                <h5 className="">Product Name is longer than anythin else</h5>
+              </div>
+              <div className="col-md-4">
+                <h5>Weight is soo bighhssdkl;fasdfklsdfjkl</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Price</h5>
+              </div>
+              <div className="col-md-2">
+                <h5>Action</h5>
+              </div>
+            </div>
           </div>
           {/* add product page */}
           <div id="addProduct">
             <div className="shadow mt-2  p-3 mb-5 bg-body rounded">
-              <h2 style={{ fontWeight: 700 }}>Add product</h2>
+              <h2 style={{ fontWeight: 700 }}>Add Product</h2>
             </div>
             <div className="shadow p-2">
               <form action="">
