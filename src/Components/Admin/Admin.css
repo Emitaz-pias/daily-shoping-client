@@ -1,6 +1,12 @@
 .customPlaceholder::placeholder {
   color: gray !important;
 }
+.customBg {
+  background-color: #f4fcfb !important;
+}
+.whiteBg {
+  background-color: #ffff;
+}
 .customHeader {
   font-weight: 700;
 }

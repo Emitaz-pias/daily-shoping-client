@@ -18,10 +18,10 @@ const Admin = () => {
   return (
     <div>
       <div className="row w-100">
-        <div className="col-3">
+        <div className=" col-3">
           <Sidebar></Sidebar>
         </div>
-        <div className="col">
+        <div className="customBg col">
           <div id="manageProducts">
             <div className="shadow mt-2  p-3 mb-5 bg-body rounded">
               <h2 style={{ fontWeight: 700 }}>Manage Products</h2>
@@ -89,12 +89,12 @@ const Admin = () => {
           </div>
           {/* add product page */}
           <div id="addProduct">
-            <div className="shadow mt-2 p-3 mb-3 bg-body rounded">
+            <div className="shadow mt-2 p-3 mb-3 bg-body rounded whiteBg">
               <h2 style={{ fontWeight: 700 }}>Add Product</h2>
             </div>
             <div className="p-2">
               <form onSubmit={handleSubmit} action="">
-                <div className="shadow p-3 mb-3 bg-body rounded">
+                <div className="shadow p-3 mb-3 bg-body rounded  whiteBg">
                   <div className="row p-3">
                     <div className="col">
                       <h6 className="customHeader">Product Name</h6>
