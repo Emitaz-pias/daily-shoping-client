@@ -4,3 +4,9 @@
 .boldedFont {
   font-weight: 700;
 }
+.orderPlaceBtn {
+  color: white;
+}
+.orderPlaceBtn:focus-within {
+  color: white;
+}

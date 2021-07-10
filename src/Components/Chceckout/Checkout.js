@@ -18,7 +18,7 @@ const Checkout = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-  const handleCheckOut = () => console.log("thi si chelkout");
+  const handleCheckOut = () => {};
   return (
     <Container>
       <Header />
@@ -69,25 +69,36 @@ const Checkout = () => {
       </div>
       {/* orderSubmitForm */}
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="text"
-          placeholder="Name"
-          {...register("Name", { required: true, maxLength: 80 })}
-        />
-        <input
-          type="email"
-          placeholder="Eamil"
-          {...register("Eamil", { required: true, pattern: /^\S+@\S+$/i })}
-        />
-        <input
-          type="text"
-          placeholder="Address"
-          {...register("Address", { required: true, maxLength: 12 })}
-        />
-
-        <input type="submit" />
-      </form>
+      <div className="w-50" id="submitForms">
+        <form className="mt-3" onSubmit={handleSubmit(onSubmit)}>
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Name"
+            {...register("Name", { required: true, maxLength: 80 })}
+          />
+          <br />
+          <input
+            className="form-control"
+            type="email"
+            placeholder="Eamil"
+            {...register("Eamil", { required: true, pattern: /^\S+@\S+$/i })}
+          />
+          <br />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Address"
+            {...register("Address", { required: true, maxLength: 12 })}
+          />
+          <br />
+          <input
+            className="form-control customColor  orderPlaceBtn"
+            type="submit"
+            value="Place Order"
+          />
+        </form>
+      </div>
     </Container>
   );
 };
