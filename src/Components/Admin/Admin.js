@@ -164,7 +164,11 @@ const Admin = () => {
                   </div>
                 </div>
                 <div className="d-flex justify-content-end">
-                  <input type="submit" value="save" />
+                  <input
+                    className="customSubmitBtn"
+                    type="submit"
+                    value="save"
+                  />
                 </div>
               </form>
             </div>
