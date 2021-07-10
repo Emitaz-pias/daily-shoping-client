@@ -2,3 +2,6 @@
   text-align: center;
   font-family: "Encode Sans SC", sans-serif;
 }
+* {
+  margin: 0;
+}
