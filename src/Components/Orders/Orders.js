@@ -12,9 +12,9 @@ const Orders = () => {
           Your Orders!!
         </h2>
         {/* full shadow box */}
-        <div className="row customWidth shadow p-3 mb-5 bg-body rounded">
+        <div className="row  shadow p-3 mb-5 bg-body rounded">
           {/* headers with felx and gray color*/}
-          <div className="col  detailsHeaderContainer pl-1 pr-3  d-flex justify-content-between">
+          <div className="col  detailsHeaderContainer pl-1 pr-2  d-flex justify-content-between">
             <div className="descriptionContainerHeader">
               <h6>Description</h6>
             </div>
@@ -28,10 +28,10 @@ const Orders = () => {
               <div className=" descriptionContainerHeader ">
                 <h6>Owner's Name</h6>
               </div>
-              <div className="qtyPriceContainerHeader  pl-2 w-50 d-flex justify-content-between">
+              <div className="qtyPriceContainerHeader  mr-5 pr-2 w-50 d-flex justify-content-between">
                 <h6>Email</h6>
 
-                <h6 className="pl-5">Adress</h6>
+                <h6>Adress</h6>
               </div>
             </div>
             {/* orderDetailsHeader */}
@@ -47,33 +47,31 @@ const Orders = () => {
           <hr className="bg-secondary.bg-gradient w-100" />
 
           {/* loaded orders from database */}
-          <div className="col  detailsContainer pl-1 pr-3  d-flex justify-content-between">
+          <div className="col  detailsContainer pl-1 pr-5 d-flex justify-content-between">
             <div className="descriptionContainerHeader">
               <h6>Alur vorta murgir dim</h6>
             </div>
-            <div className="qtyPriceContainerHeader pl-5 w-50 d-flex justify-content-around">
+            <div className="qtyPriceContainerHeader  w-25 d-flex justify-content-around">
               <h6>1 kg 2 case</h6>
 
               <h6>$400</h6>
             </div>
             {/* owersDetails */}
-            <div className="col-md-5 border border-danger d-inline-flex">
-              <div className=" descriptionContainerHeader ">
+            <div className="col-md-5 d-flex  justify-content-around">
+              <div className=" descriptionContainerHeader  ">
                 <h6>Emtiaz pias</h6>
               </div>
-              <div className="qtyPriceContainerHeader  pl-5 w-50 d-flex justify-content-between">
-                <h6>Emtiazpias@gmailcom</h6>
-                <h6 style={{ overflowWrap: "anywhere" }} className="pl-5">
-                  Pirujali Gazipur
-                </h6>
+              <div className="qtyPriceContainerHeader  w-75 ml-5 pl-5 d-flex justify-content-around">
+                <h6>Emtiazpias@gmailcom como com ocmoc com</h6>
+                <h6 className="pl-5">Pirujali Gazipur dhaka bangladesh</h6>
               </div>
             </div>
             {/* orderDetails */}
             <div className="col-md-3 ">
-              <div className="qtyPriceContainerHeader  w-50 d-flex justify-content-evenly">
-                <h6>Order Date</h6>
+              <div className="qtyPriceContainerHeader  w-75  d-flex justify-content-between">
+                <h6>02-08-2021</h6>
 
-                <h6 className="pl-5">Delivery Date</h6>
+                <h6 className="pl-5">05-08-2021</h6>
               </div>
             </div>
           </div>
