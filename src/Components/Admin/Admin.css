@@ -4,3 +4,14 @@
 .customHeader {
   font-weight: 700;
 }
+.customFileInput {
+  display: none;
+}
+.uploadButton {
+  border: 1px solid;
+  background-color: #dcffec;
+  color: #71ba58;
+  height: 2.5em;
+  width: 13em;
+  border-radius: 5px;
+}
