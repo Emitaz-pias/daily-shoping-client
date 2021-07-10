@@ -5,6 +5,7 @@
   font-weight: 700;
 }
 #manageProducts {
+  display: none;
 }
 .manageProductsHeader {
   background-color: #f5f6fa;
@@ -19,6 +20,14 @@
   height: 2.5em;
   width: 13em;
   border-radius: 5px;
+}
+.customSubmitBtn {
+  background-color: #71ba58;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 2.1em;
+  width: 4em;
 }
 .editBtn {
   background-color: #71ba58;
