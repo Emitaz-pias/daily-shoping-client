@@ -1,0 +1,6 @@
+.customPlaceholder::placeholder {
+  color: gray !important;
+}
+.customHeader {
+  font-weight: 700;
+}

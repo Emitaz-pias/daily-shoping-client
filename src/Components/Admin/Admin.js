@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
+import "./Admin.css";
 
 const Admin = () => {
   const {
@@ -23,35 +24,35 @@ const Admin = () => {
           <div className="shadow mt-2  p-3 mb-5 bg-body rounded">
             <h2 style={{ fontWeight: 700 }}>Add product</h2>
           </div>
-          <div className="shadow">
+          <div className="shadow p-2">
             <form action="">
-              <div className="row">
+              <div className="row p-3">
                 <div className="col">
-                  <h6>Add Product Name</h6>
+                  <h6 className="customHeader">Product Name</h6>
                   <input
-                    className="form-control"
+                    className="form-control mt-4 customPlaceholder"
                     type="text"
                     name=""
-                    placeholder="Enter product name"
+                    placeholder="Enter Name"
                     id=""
                   />
                 </div>
                 <div className="col">
-                  <h6>Weight</h6>
+                  <h6 className="customHeader">Weight</h6>
                   <input
                     type="text"
                     name=""
                     placeholder="Weight"
-                    className="form-control"
+                    className="form-control mt-4 customPlaceholder"
                     id=""
                   />
                 </div>
               </div>
-              <div className="row">
+              <div className="row mt-3 p-3">
                 <div className="col">
-                  <h6>Add Price</h6>
+                  <h6 className="customHeader">Add Price</h6>
                   <input
-                    className="form-control"
+                    className="form-control mt-4  customPlaceholder"
                     type="text"
                     name=""
                     placeholder="Enter price"
@@ -59,8 +60,14 @@ const Admin = () => {
                   />
                 </div>
                 <div className="col">
-                  <h6> Add Image</h6>
-                  <input type="file" name="" placeholder="Upload file" id="" />
+                  <h6 className="customHeader"> Add Photo</h6>
+                  <input
+                    className="mt-4"
+                    type="file"
+                    name=""
+                    placeholder="Upload file"
+                    id=""
+                  />
                 </div>
               </div>
             </form>
@@ -72,5 +79,3 @@ const Admin = () => {
 };
 
 export default Admin;
-
-// style={{ display: "inline-flex" }}
