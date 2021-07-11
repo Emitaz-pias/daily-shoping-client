@@ -2,12 +2,20 @@ import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
 import "./AddProduct.css";
+import { useEffect } from "react";
 const Addproduct = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  // error message for the input type file
+
+  const handleUploadImage = (event) => {
+    console.log("input changed", event.target.files);
+    // const image = document.getElementById("file").files[0];
+    // console.log("file is", image);
+  };
   const sendProductToDatabase = (data) => {
     console.log("form submitted", data);
   };
@@ -78,19 +86,15 @@ const Addproduct = () => {
                   </div>
                   <div className="col">
                     <h6 className="customHeader"> Add Photo</h6>
-
                     <input
                       className="mt-4  customFileInput"
                       type="file"
+                      onChange={handleUploadImage}
                       name="file"
                       id="file"
-                      {...register("photo", { required: true, maxLength: 80 })}
+                      accept=".jpg, .jpeg, .png"
+                      required
                     />
-                    {errors.photo && (
-                      <span className="addProductError">
-                        You must include a photo of product
-                      </span>
-                    )}
                     <label
                       className="uploadButton d-flex justify-content-around align-items-center mt-4 ml-1"
                       htmlFor="file"

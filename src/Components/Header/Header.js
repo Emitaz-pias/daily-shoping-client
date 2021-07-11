@@ -6,9 +6,7 @@ const Header = () => {
   const user = {
     nae: "pias",
   };
-  const handleLogIn = () => {
-    console.log("log in clicked");
-  };
+  const handleLogIn = () => {};
   return (
     <Container>
       <Navbar

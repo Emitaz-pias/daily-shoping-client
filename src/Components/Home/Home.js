@@ -8,7 +8,6 @@ import { InputGroup, FormControl, Button } from "react-bootstrap";
 const Home = () => {
   const handleSearchBtn = () => {
     const searchedText = document.getElementById("searchInputField").value;
-    console.log(searchedText);
   };
   return (
     <div className="container">

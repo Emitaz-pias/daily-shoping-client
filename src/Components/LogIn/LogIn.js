@@ -20,7 +20,6 @@ const LogIn = () => {
     });
     history.replace(from);
   };
-  console.log(loggedInUser);
   return (
     <Container>
       <div className="mt-3">

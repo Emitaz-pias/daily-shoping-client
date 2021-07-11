@@ -4,10 +4,10 @@ import fb from "../../icons/fb.png";
 import googlePic from "../../icons/google.png";
 const PopUpSign = () => {
   const handleFbSignIn = () => {
-    console.log("hello Minu fb sign in button clicked");
+    // console.log("hello Minu fb sign in button clicked");
   };
   const handleGoogleSignIn = () => {
-    console.log("hello Minu google sign in button clicked");
+    // console.log("hello Minu google sign in button clicked");
   };
   return (
     <div className="d-flex justify-content-center">
