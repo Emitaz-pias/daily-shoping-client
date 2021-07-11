@@ -12,18 +12,21 @@ const Checkout = () => {
   const { product, user } = useContext(UsersContext);
   const [loggedInUser] = user;
   const [selectProduct] = product;
-  console.log("from checkout", selectProduct);
+  const { productName, price, quantity } = selectProduct;
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
   const [orderClicked, setOrderClicked] = useState(false);
 
   const handleCheckOut = () => {
     setOrderClicked(true);
+  };
+  const onPlaceOrder = (user) => {
+    const order = { ...selectProduct, user };
+    const newOrder = order;
   };
   return (
     <Container>
@@ -35,20 +38,21 @@ const Checkout = () => {
           <h2>Hey, {loggedInUser.name} Your Order is : </h2>
 
           <div className="mt-5">
-            <div className="d-flex shadow p-2 mb-3 bg-rounded justify-content-around">
+            <div className="d-flex shadow-sm p-2 mb-3 bg-rounded justify-content-around">
               <h4>Product Name</h4>
               <h4>Quantity</h4>
               <h4>Price</h4>
             </div>
             <div className="d-flex justify-content-around">
-              <h4>{selectProduct.productName}</h4>
-              <h4>{selectProduct.quantity}</h4>
-              <h4>{selectProduct.price}</h4>
+              <h4>{productName}</h4>
+              <h4>{quantity}</h4>
+              <h4>{price}</h4>
             </div>
             <div className="w-75 ml-5 pl-5" id="submitForms">
               <form
+                id="placeOrderForm"
                 className="mt-5 ml-5 pl-5"
-                onSubmit={handleSubmit(onSubmit)}
+                onSubmit={handleSubmit(onPlaceOrder)}
               >
                 <input
                   className="form-control"
@@ -102,22 +106,22 @@ const Checkout = () => {
               </div>
             </div>
             <hr className="bg-secondary.bg-gradient w-100" />
-            {/* loaded orders from database */}
+            {/* oreders from user*/}
             <div className="detailsContainer pl-2 pr-3  d-flex justify-content-between">
               <div className="descriptionContainer ">
-                <h6 className="boldedFont">Products details is alur vorta</h6>
+                <h6 className="boldedFont">{productName}</h6>
               </div>
               <div className="qtyPriceContainer ml-5 pl-5 w-50 d-flex justify-content-between">
-                <h6 className="boldedFont">10000gm</h6>
+                <h6 className="boldedFont">{quantity}</h6>
 
-                <h6 className="pl-5 boldedFont">$553</h6>
+                <h6 className="pl-5 boldedFont">{price}</h6>
               </div>
             </div>
             <div className="calculationDiv boldedFont">
               <hr className="bg-secondary.bg-gradient w-100" />
               <div className="d-flex justify-content-between">
-                <h6 className="boldedFont">Total</h6>
-                <h6 className="boldedFont">$500</h6>
+                <h6 className="boldedFont ml-2">Total</h6>
+                <h6 className="boldedFont mr-3">{price}</h6>
               </div>
             </div>
           </div>

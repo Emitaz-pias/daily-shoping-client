@@ -34,7 +34,7 @@ const Cards = (props) => {
             <Link to="/checkout">
               <Button
                 onClick={() => handleBuyNow(props.product)}
-                className="customBuyNowButton border border-danger"
+                className="customBuyNowButton"
               >
                 Buy now
               </Button>
