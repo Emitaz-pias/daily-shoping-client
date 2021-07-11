@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
 import "./AddProduct.css";
-import { useEffect } from "react";
+import axios from "axios";
 const Addproduct = () => {
   const {
     register,
@@ -12,9 +12,23 @@ const Addproduct = () => {
   // error message for the input type file
 
   const handleUploadImage = (event) => {
-    console.log("input changed", event.target.files);
-    // const image = document.getElementById("file").files[0];
-    // console.log("file is", image);
+    console.log("input changed", event.target.files[0]);
+    const ImageBBUrl = ` https://api.imgbb.com/1/upload`;
+    const image = event.target.files[0];
+    const imageData = new FormData();
+    imageData.set("key", "1b155e7e761be44367daaf7b9b9d5a06");
+    imageData.set("image", image);
+    axios({
+      method: "post",
+      url: ImageBBUrl,
+      data: imageData,
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
   const sendProductToDatabase = (data) => {
     console.log("form submitted", data);
