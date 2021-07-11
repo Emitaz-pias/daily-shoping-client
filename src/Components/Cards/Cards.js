@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -7,6 +7,11 @@ import "./Cards.css";
 const Cards = (props) => {
   const { productName, price, quantity, productImage } = props.product;
   const { product } = useContext(UsersContext);
+  useEffect(() => {
+    fetch("http://localhost:8080/products")
+      .then((res) => res.json())
+      .then((data) => console.log("products is", data));
+  }, []);
   const [selectProduct, setSelectProduct] = product;
   const handleBuyNow = (pd) => {
     // pass the product selected by buy now button
