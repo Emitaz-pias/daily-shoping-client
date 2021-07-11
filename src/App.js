@@ -12,7 +12,7 @@ import Checkout from "./Components/Chceckout/Checkout";
 export const UsersContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  const [selectedProduct, setSeltectedProduct] = useState({ name: "alu" });
+  const [selectedProduct, setSeltectedProduct] = useState({});
   return (
     <UsersContext.Provider
       value={{
