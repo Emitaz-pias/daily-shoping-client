@@ -1,8 +1,14 @@
 import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
+import { useForm } from "react-hook-form";
 
 const Addproduct = () => {
-  const handleSubmit = (data) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const sendProductToDatabase = (data) => {
     console.log("form submitted", data);
   };
   return (
@@ -16,7 +22,7 @@ const Addproduct = () => {
             <h2 style={{ fontWeight: 700 }}>Add Product</h2>
           </div>
           <div className="p-2">
-            <form onSubmit={handleSubmit} action="">
+            <form onSubmit={handleSubmit(sendProductToDatabase)} action="">
               <div className="shadow p-3 mb-3 bg-body rounded  whiteBg">
                 <div className="row p-3">
                   <div className="col">
@@ -27,6 +33,10 @@ const Addproduct = () => {
                       name=""
                       placeholder="Enter Name"
                       id=""
+                      {...register("Product Name", {
+                        required: true,
+                        maxLength: 80,
+                      })}
                     />
                   </div>
                   <div className="col">
@@ -37,6 +47,7 @@ const Addproduct = () => {
                       placeholder="Weight"
                       className="form-control mt-4 customPlaceholder"
                       id=""
+                      {...register("Weight", { required: true, maxLength: 80 })}
                     />
                   </div>
                 </div>
@@ -49,6 +60,7 @@ const Addproduct = () => {
                       name=""
                       placeholder="Enter Price"
                       id=""
+                      {...register("Price", { required: true, maxLength: 80 })}
                     />
                   </div>
                   <div className="col">
