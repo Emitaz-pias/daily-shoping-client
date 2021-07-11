@@ -3,6 +3,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
 import "./AddProduct.css";
 import axios from "axios";
+import { useEffect } from "react";
 const Addproduct = () => {
   const {
     register,
@@ -50,7 +51,15 @@ const Addproduct = () => {
   console.log("added Product is", addededProduct);
 
   // submit the data to the database ..
-
+  useEffect(() => {
+    fetch("http://localhost:8080/addProduct", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(addededProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
   return (
     <div className="row w-100">
       <div className="col-3">
