@@ -8,10 +8,13 @@ const Addproduct = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
+
   const [addededProduct, setAddededProduct] = useState({});
   const [productImage, setProductImage] = useState("");
+  const [productAdded, setProductAdded] = useState(false);
 
   // upload image to the imagebb
   const handleUploadImage = (event) => {
@@ -46,6 +49,10 @@ const Addproduct = () => {
     };
     const newProduct = { ...addedProduct };
     setAddededProduct(newProduct);
+    // clear the form after submitting data
+    if (productAdded === true) {
+      reset();
+    }
   };
 
   console.log("added Product is", addededProduct);
@@ -58,8 +65,9 @@ const Addproduct = () => {
       body: JSON.stringify(addededProduct),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
+      .then((data) => setProductAdded(data));
+  }, [addededProduct]);
+
   return (
     <div className="row w-100">
       <div className="col-3">
