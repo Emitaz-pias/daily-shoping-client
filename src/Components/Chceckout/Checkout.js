@@ -27,6 +27,7 @@ const Checkout = () => {
   const onPlaceOrder = (user) => {
     const order = { ...selectProduct, user };
     const newOrder = order;
+    document.getElementById("orderArea").style.display = "none";
   };
   return (
     <Container>
@@ -34,7 +35,7 @@ const Checkout = () => {
 
       {/* orderSubmitForm */}
       {orderClicked ? (
-        <div className="mt-5">
+        <div id="orderArea">
           <h2>Hey, {loggedInUser.name} Your Order is : </h2>
 
           <div className="mt-5">
@@ -53,6 +54,7 @@ const Checkout = () => {
                 id="placeOrderForm"
                 className="mt-5 ml-5 pl-5"
                 onSubmit={handleSubmit(onPlaceOrder)}
+                action=""
               >
                 <input
                   className="form-control"

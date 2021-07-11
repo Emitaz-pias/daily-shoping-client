@@ -9,6 +9,7 @@ import NotFound from "./Components/NotFound/NotFound";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import { createContext, useState } from "react";
 import Checkout from "./Components/Chceckout/Checkout";
+import Addproduct from "./Components/Addproduct/Addproduct";
 export const UsersContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -36,6 +37,9 @@ function App() {
           </PrivateRoute>
           <Route path="/admin">
             <Admin />
+          </Route>
+          <Route exact path="/addProduct">
+            <Addproduct></Addproduct>
           </Route>
           <Route exact path="/">
             <Home></Home>
