@@ -60,18 +60,39 @@ const Checkout = () => {
                   className="form-control"
                   type="text"
                   placeholder="Name"
-                  {...register("Name", { required: true, maxLength: 80 })}
+                  {...register("Name", {
+                    required: true,
+                    maxLength: 80,
+                    pattern: /\D/,
+                  })}
                 />
+                {errors.Name?.type === "required" && (
+                  <span className="addProductError">Name is required!</span>
+                )}
+                {errors.Name?.type === "pattern" && (
+                  <span className="addProductError">
+                    Your name Shouldn't conatain only number!
+                  </span>
+                )}
                 <br />
                 <input
                   className="form-control"
-                  type="email"
+                  type="text"
                   placeholder="Eamil"
-                  {...register("Eamil", {
+                  {...register("Email", {
                     required: true,
+                    maxlength: 255,
                     pattern: /^\S+@\S+$/i,
                   })}
                 />
+                {errors.Email?.type === "required" && (
+                  <span className="addProductError">Eamil is required!</span>
+                )}
+                {errors.Email?.type === "pattern" && (
+                  <span className="addProductError">
+                    Please provide a valid email address!
+                  </span>
+                )}
                 <br />
                 <input
                   className="form-control"
@@ -79,6 +100,14 @@ const Checkout = () => {
                   placeholder="Address"
                   {...register("Address", { required: true, maxLength: 12 })}
                 />
+                {errors.Address?.type === "required" && (
+                  <span className="addProductError">Eamil is required!</span>
+                )}
+                {errors.Address?.type === "pattern" && (
+                  <span className="addProductError">
+                    Please provide a valid email address!
+                  </span>
+                )}
                 <br />
                 <input
                   className="form-control customColor  orderPlaceBtn"
