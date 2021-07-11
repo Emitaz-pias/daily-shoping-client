@@ -15,6 +15,7 @@ const Addproduct = () => {
 
   const [addededProduct, setAddededProduct] = useState();
   const [productImage, setProductImage] = useState("");
+  const [imageUploaded, setImageUploaded] = useState(false);
   const [productAdded, setProductAdded] = useState(false);
 
   // upload image to the imagebb
@@ -33,6 +34,9 @@ const Addproduct = () => {
       .then((response) => {
         const image = response.data.data.display_url;
         setProductImage(image);
+        if (response.status === 200) {
+          setImageUploaded(true);
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -58,7 +62,7 @@ const Addproduct = () => {
 
   // submit the data to the database ..
   useEffect(() => {
-    if (addededProduct) {
+    if (addededProduct && imageUploaded === true) {
       fetch("http://localhost:8080/addProduct", {
         method: "POST",
         headers: { "Content-type": "application/json" },

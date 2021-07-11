@@ -45,9 +45,8 @@ const Home = () => {
           </InputGroup>
         </div>
       </div>
-      {fakeData.map((pd) => (
-        <Cards product={pd} />
-      ))}
+
+      <Cards />
     </div>
   );
 };

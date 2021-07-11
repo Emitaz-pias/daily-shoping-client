@@ -1,18 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UsersContext } from "../../App";
 import "./Cards.css";
 const Cards = (props) => {
-  const { productName, price, quantity, productImage } = props.product;
+  // const { productName, price, quantity, productImage } = props.product;
   const { product } = useContext(UsersContext);
+  const [products, setProducts] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
+
   useEffect(() => {
     fetch("http://localhost:8080/products")
       .then((res) => res.json())
-      .then((data) => console.log("products is", data));
+      .then((data) => {
+        data.forEach((pd) => setProducts(pd));
+      });
   }, []);
+  console.log("this is a product name is  ", products.name);
   const [selectProduct, setSelectProduct] = product;
+
   const handleBuyNow = (pd) => {
     // pass the product selected by buy now button
     setSelectProduct(pd);
@@ -20,7 +27,8 @@ const Cards = (props) => {
 
   return (
     <Container>
-      <div
+      <h1>this is card</h1>
+      {/* <div
         className="shadow ml-2 mt-4   mb-5 bg-body rounded"
         style={{ float: "left" }}
       >
@@ -46,7 +54,7 @@ const Cards = (props) => {
             </Link>
           </div>
         </Card>
-      </div>
+      </div> */}
     </Container>
   );
 };
