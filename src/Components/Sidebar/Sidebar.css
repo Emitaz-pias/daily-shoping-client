@@ -1,3 +1,7 @@
+.bg:focus-within {
+  background: transparent;
+  background-color: #2d524a;
+}
 .bg:hover {
   background: transparent;
   background-color: #2d524a;
