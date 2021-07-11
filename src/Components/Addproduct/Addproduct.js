@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
-
+import "./AddProduct.css";
 const Addproduct = () => {
   const {
     register,
@@ -33,11 +33,16 @@ const Addproduct = () => {
                       name=""
                       placeholder="Enter Name"
                       id=""
-                      {...register("Product Name", {
+                      {...register("ProductName", {
                         required: true,
                         maxLength: 80,
                       })}
                     />
+                    {errors.ProductName && (
+                      <span className="addProductError">
+                        Product's Name is required
+                      </span>
+                    )}
                   </div>
                   <div className="col">
                     <h6 className="customHeader">Weight</h6>
@@ -49,6 +54,11 @@ const Addproduct = () => {
                       id=""
                       {...register("Weight", { required: true, maxLength: 80 })}
                     />
+                    {errors.Weight && (
+                      <span className="addProductError">
+                        Weight is required
+                      </span>
+                    )}
                   </div>
                 </div>
                 <div className="row mt-3 p-3">
@@ -62,6 +72,9 @@ const Addproduct = () => {
                       id=""
                       {...register("Price", { required: true, maxLength: 80 })}
                     />
+                    {errors.Price && (
+                      <span className="addProductError">Price is required</span>
+                    )}
                   </div>
                   <div className="col">
                     <h6 className="customHeader"> Add Photo</h6>
@@ -71,7 +84,13 @@ const Addproduct = () => {
                       type="file"
                       name="file"
                       id="file"
+                      {...register("photo", { required: true, maxLength: 80 })}
                     />
+                    {errors.photo && (
+                      <span className="addProductError">
+                        You must include a photo of product
+                      </span>
+                    )}
                     <label
                       className="uploadButton d-flex justify-content-around align-items-center mt-4 ml-1"
                       htmlFor="file"
