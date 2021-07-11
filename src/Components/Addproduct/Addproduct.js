@@ -23,8 +23,8 @@ const Addproduct = () => {
       url: ImageBBUrl,
       data: imageData,
     })
-      .then(function (response) {
-        console.log(response);
+      .then((response) => {
+        console.log(response.data.data.display_url);
       })
       .catch(function (error) {
         console.log(error);
