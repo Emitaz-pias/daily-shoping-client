@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
 import "./AddProduct.css";
@@ -9,30 +9,48 @@ const Addproduct = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  // error message for the input type file
+  const [addededProduct, setAddededProduct] = useState({});
+  const [productImage, setProductImage] = useState("");
 
+  // upload image to the imagebb
   const handleUploadImage = (event) => {
-    console.log("input changed", event.target.files[0]);
     const ImageBBUrl = ` https://api.imgbb.com/1/upload`;
     const image = event.target.files[0];
     const imageData = new FormData();
     imageData.set("key", "1b155e7e761be44367daaf7b9b9d5a06");
     imageData.set("image", image);
+    // post data to the imagebb
     axios({
       method: "post",
       url: ImageBBUrl,
       data: imageData,
     })
       .then((response) => {
-        console.log(response.data.data.display_url);
+        const image = response.data.data.display_url;
+        setProductImage(image);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
+
+  // get the product from user
   const sendProductToDatabase = (data) => {
     console.log("form submitted", data);
+    const addedProduct = {
+      name: data.ProductName,
+      price: data.Price,
+      weight: data.Weight,
+      image: productImage,
+    };
+    const newProduct = { ...addedProduct };
+    setAddededProduct(newProduct);
   };
+
+  console.log("added Product is", addededProduct);
+
+  // submit the data to the database ..
+
   return (
     <div className="row w-100">
       <div className="col-3">
