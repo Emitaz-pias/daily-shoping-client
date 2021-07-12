@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Checkout.css";
 import { Container, Button } from "react-bootstrap";
 import Header from "../../Components/Header/Header";
@@ -20,6 +20,8 @@ const Checkout = () => {
     formState: { errors },
   } = useForm();
   const [orderClicked, setOrderClicked] = useState(false);
+  const [order, setOrder] = useState({});
+  const [orderPlaced, setOrderPlaced] = useState(false);
   console.log("your selected product is", selectProduct);
   const handleCheckOut = () => {
     setOrderClicked(true);
@@ -27,8 +29,23 @@ const Checkout = () => {
   const onPlaceOrder = (user) => {
     const order = { ...selectProduct, user };
     const newOrder = order;
+    setOrder(newOrder);
+    setOrderPlaced(true);
     document.getElementById("orderArea").style.display = "none";
   };
+
+  // place order to database
+  useEffect(() => {
+    if (order && orderPlaced === true) {
+      fetch("http://localhost:8080/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    }
+  }, [order, orderPlaced]);
   return (
     <Container>
       <Header />
