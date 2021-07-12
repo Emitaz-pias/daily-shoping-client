@@ -12,7 +12,7 @@ const Checkout = () => {
   const { product, user } = useContext(UsersContext);
   const [loggedInUser] = user;
   const [selectProduct] = product;
-  const { productName, price, quantity } = selectProduct;
+  const { name, price, weight } = selectProduct;
   const {
     register,
     handleSubmit,
@@ -20,7 +20,7 @@ const Checkout = () => {
     formState: { errors },
   } = useForm();
   const [orderClicked, setOrderClicked] = useState(false);
-
+  console.log("your selected product is", selectProduct);
   const handleCheckOut = () => {
     setOrderClicked(true);
   };
@@ -45,8 +45,8 @@ const Checkout = () => {
               <h4>Price</h4>
             </div>
             <div className="d-flex justify-content-around">
-              <h4>{productName}</h4>
-              <h4>{quantity}</h4>
+              <h4>{name}</h4>
+              <h4>{weight}</h4>
               <h4>{price}</h4>
             </div>
             <div className="w-75 ml-5 pl-5" id="submitForms">
@@ -140,10 +140,10 @@ const Checkout = () => {
             {/* oreders from user*/}
             <div className="detailsContainer pl-2 pr-3  d-flex justify-content-between">
               <div className="descriptionContainer ">
-                <h6 className="boldedFont">{productName}</h6>
+                <h6 className="boldedFont">{name}</h6>
               </div>
               <div className="qtyPriceContainer ml-5 pl-5 w-50 d-flex justify-content-between">
-                <h6 className="boldedFont">{quantity}</h6>
+                <h6 className="boldedFont">{weight}</h6>
 
                 <h6 className="pl-5 boldedFont">{price}</h6>
               </div>
