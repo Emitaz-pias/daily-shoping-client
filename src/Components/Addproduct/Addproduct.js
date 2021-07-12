@@ -71,7 +71,7 @@ const Addproduct = () => {
         .then((res) => res.json())
         .then((data) => setProductAdded(data));
     }
-  }, [addededProduct]);
+  }, [addededProduct, imageUploaded]);
 
   return (
     <div className=" ">

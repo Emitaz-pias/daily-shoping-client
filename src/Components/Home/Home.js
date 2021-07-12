@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Header from "../Header/Header";
-import fakeData from "../fakeData/fakeData";
 import Cards from "../Cards/Cards";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 
@@ -9,6 +8,18 @@ const Home = () => {
   const handleSearchBtn = () => {
     const searchedText = document.getElementById("searchInputField").value;
   };
+  const [products, setProducts] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  // load data from database
+
+  useEffect(() => {
+    fetch("http://localhost:8080/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
   return (
     <div className="container">
       <div className="">
@@ -46,7 +57,9 @@ const Home = () => {
         </div>
       </div>
 
-      <Cards />
+      {products.map((pd) => (
+        <Cards product={pd} />
+      ))}
     </div>
   );
 };
