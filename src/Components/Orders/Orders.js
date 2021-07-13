@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import "./Orders.css";
 import Header from "../../Components/Header/Header";
 import { Link } from "react-router-dom";
+import { UsersContext } from "../../App";
+import { useState } from "react";
 const Orders = () => {
+  const { user } = useContext(UsersContext);
+  const [loggedInUser, setLoggedInUser] = user;
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:8080/email=${loggedInUser.email}`)
+      .then((res) => res.json())
+      .then((data) => setOrders(data));
+  }, []);
   return (
     <div>
       <Header />
@@ -48,34 +58,40 @@ const Orders = () => {
           <hr className="bg-secondary.bg-gradient w-100" />
 
           {/* loaded orders from database */}
-          <div className="col  detailsContainer pl-1 pr-5 d-flex justify-content-between">
-            <div className="descriptionContainerHeader">
-              <h6>Alur vorta murgir dim</h6>
-            </div>
-            <div className="qtyPriceContainerHeader  w-25 d-flex justify-content-around">
-              <h6>1 kg 2 case</h6>
+          {orders.map((order) => (
+            <div className="col  detailsContainer pl-1 pr-5 d-flex justify-content-between">
+              <div className="descriptionContainerHeader">
+                <h6>{order.name}</h6>
+              </div>
+              <div className="qtyPriceContainerHeader  w-25 d-flex justify-content-around">
+                <h6>1 kg{order.weight}</h6>
 
-              <h6>$400</h6>
-            </div>
-            {/* owersDetails */}
-            <div className="col-md-5 d-flex  justify-content-around">
-              <div className=" descriptionContainerHeader  ">
-                <h6>Emtiaz pias</h6>
+                <h6>$400{order.price}</h6>
               </div>
-              <div className="qtyPriceContainerHeader  w-75 ml-5 pl-5 d-flex justify-content-around">
-                <h6>Emtiazpias@gmailcom como com ocmoc com</h6>
-                <h6 className="pl-5">Pirujali Gazipur dhaka bangladesh</h6>
+              {/* owersDetails */}
+              <div className="col-md-5 d-flex  justify-content-around">
+                <div className=" descriptionContainerHeader  ">
+                  <h6>Emtiaz pias {order.user.name}</h6>
+                </div>
+                <div className="qtyPriceContainerHeader  w-75 ml-5 pl-5 d-flex justify-content-around">
+                  <h6>
+                    Emtiazpias@gmailcom como com ocmoc com {order.user.email}
+                  </h6>
+                  <h6 className="pl-5">
+                    Pirujali Gazipur dhaka bangladesh {order.user.address}
+                  </h6>
+                </div>
               </div>
-            </div>
-            {/* orderDetails */}
-            <div className="col-md-3 ">
-              <div className="qtyPriceContainerHeader  w-75  d-flex justify-content-between">
-                <h6>02-08-2021</h6>
+              {/* orderDetails */}
+              <div className="col-md-3 ">
+                <div className="qtyPriceContainerHeader  w-75  d-flex justify-content-between">
+                  <h6>{order.orderDate}</h6>
 
-                <h6 className="pl-5">05-08-2021</h6>
+                  <h6 className="pl-5">{order.deliveryDate}</h6>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
           {/* 
         <div className="calculationDiv boldedFont">
           <hr className="bg-secondary.bg-gradient w-100" />

@@ -28,6 +28,7 @@ const Checkout = () => {
   };
   const onPlaceOrder = (user) => {
     const order = { ...selectProduct, user };
+    order.orderDate = new Date();
     const newOrder = order;
     setOrder(newOrder);
     setOrderPlaced(true);
@@ -37,7 +38,7 @@ const Checkout = () => {
   // place order to database
   useEffect(() => {
     if (order && orderPlaced === true) {
-      fetch("http://localhost:8080/order", {
+      fetch("http://localhost:8080/placeOrder", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(order),
