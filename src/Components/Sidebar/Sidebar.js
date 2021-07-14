@@ -8,6 +8,7 @@ const Sidebar = () => {
       style={{
         display: "flex",
         height: "100vh",
+        position: "fixed",
       }}
     >
       <CDBSidebar

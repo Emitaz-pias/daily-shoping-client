@@ -10,11 +10,10 @@ const ManageProducts = () => {
     fetch("http://localhost:8080/manageProducts")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
-  console.log("ther products", products[0]);
+  }, [products]);
   // delete product when button is clicked
   const handleDeleteProduct = (id) => {
-    fetch(`localhost:8080/product/id=${id}`)
+    fetch(`http://localhost:8080/product/${id}`, { method: "DELETE" })
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
