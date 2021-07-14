@@ -9,9 +9,9 @@ const ManageProducts = () => {
   useEffect(() => {
     fetch("http://localhost:8080/manageProducts")
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setProducts(data));
   }, []);
-
+  console.log("ther products", products[0]);
   // delete product when button is clicked
   const handleDeleteProduct = (id) => {
     fetch(`localhost:8080/product/id=${id}`)
@@ -47,16 +47,16 @@ const ManageProducts = () => {
 
           <div className="">
             {/* single product data row */}
-            {products.forEach((product) => (
+            {products.map((product) => (
               <div className="row p-3">
                 <div className="col-md-4">
                   <h5 className="">{product.name}</h5>
                 </div>
                 <div className="col-md-4">
-                  <h5>Weight {product.weight}</h5>
+                  <h5>{product.weight}</h5>
                 </div>
                 <div className="col-md-2">
-                  <h5>Price {product.price}</h5>
+                  <h5>{product.price}</h5>
                 </div>
                 <div className="col-md-2">
                   <button className="editBtn">
