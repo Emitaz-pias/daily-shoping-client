@@ -7,9 +7,9 @@ const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   // load product from database
   useEffect(() => {
-    fetch("localhost:8080/manageProducts")
+    fetch("http://localhost:8080/manageProducts")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => console.log(data));
   }, []);
 
   // delete product when button is clicked
