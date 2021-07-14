@@ -6,7 +6,6 @@ import { UsersContext } from "../../App";
 import "./Cards.css";
 const Cards = (props) => {
   const { name, price, weight, image } = props.product;
-  console.log("hello");
   const { product } = useContext(UsersContext);
 
   const [selectProduct, setSelectProduct] = product;

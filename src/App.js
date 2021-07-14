@@ -15,11 +15,19 @@ export const UsersContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [selectedProduct, setSeltectedProduct] = useState({});
+  const [signInWithEamilAndPssword, setSignInWithEamilAndPssword] = useState(
+    () => () => console.log("default blank function")
+  );
+  console.log("this is from app ", signInWithEamilAndPssword);
   return (
     <UsersContext.Provider
       value={{
         user: [loggedInUser, setLoggedInUser],
         product: [selectedProduct, setSeltectedProduct],
+        logingWithEamil: [
+          signInWithEamilAndPssword,
+          setSignInWithEamilAndPssword,
+        ],
       }}
     >
       <Router>

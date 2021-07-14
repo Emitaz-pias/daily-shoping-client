@@ -5,21 +5,27 @@ import PopUpSign from "../PopUp/PopUpSign";
 import { UsersContext } from "../../App";
 import { useContext } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
+import AuthManager from "../AuthManager/AuthManager";
 
 const LogIn = () => {
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
   const [newUser, setNewUser] = useState(false);
-  const { user } = useContext(UsersContext);
+  const { user, logingWithEamil } = useContext(UsersContext);
   const [loggedInUser, setLoggedInUser] = user;
+  const [signInWithEamilAndPssword, setSignInWithEamilAndPssword] =
+    logingWithEamil;
+
+  console.log("from log in ", signInWithEamilAndPssword);
+
   const handleLogInBtn = () => {
-    setLoggedInUser({
-      name: "Emi",
-      email: "emi@mail",
-    });
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("pass").value;
+    signInWithEamilAndPssword(email, password);
     history.replace(from);
   };
+
   return (
     <Container>
       <div className="mt-3">
@@ -41,12 +47,14 @@ const LogIn = () => {
                     className="inputStyles form-control"
                     type="text"
                     placeholder="Username or Email"
+                    id="email"
                   />
                   <br />
                   <input
                     className="inputStyles form-control"
                     type="password"
                     placeholder="Password"
+                    id="pass"
                   />
                   <br />
                   <span className="d-flex align-items-center justify-content-between">
@@ -139,6 +147,7 @@ const LogIn = () => {
         </div>
       </div>
       <PopUpSign />
+      <AuthManager />
     </Container>
   );
 };
