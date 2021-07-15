@@ -12,7 +12,8 @@ const LogIn = () => {
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
   const [newUser, setNewUser] = useState(false);
-  const { user, logingWithEamil, createUserEamil } = useContext(UsersContext);
+  const { user, createUserEamil, logingWithEamil, loginWithPopUp } =
+    useContext(UsersContext);
   const [loggedInUser, setLoggedInUser] = user;
   const [signInWithEamilAndPssword, setSignInWithEamilAndPssword] =
     logingWithEamil;
@@ -42,6 +43,9 @@ const LogIn = () => {
     setNewUser(false);
     console.log(email, password);
   };
+
+  // google sign in button
+
   return (
     <Container>
       <div className="mt-3">

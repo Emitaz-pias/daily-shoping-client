@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { UsersContext } from "../../App.js";
 import firebaseConfig from "./firebase.config.js";
@@ -8,10 +8,14 @@ import firebaseConfig from "./firebase.config.js";
 firebase.initializeApp(firebaseConfig);
 
 const AuthManager = () => {
-  const { logingWithEamil, createUserEamil } = useContext(UsersContext);
+  const { user, createUserEamil, logingWithEamil, loginWithPopUp } =
+    useContext(UsersContext);
+  const [loggedInUser, setLoggedInUser] = user;
+  const [createUser, setCreateUser] = createUserEamil;
   const [signInWithEamilAndPssword, setSignInWithEamilAndPssword] =
     logingWithEamil;
-  const [createUser, setCreateUser] = createUserEamil;
+  const [popUpSignIn, setPopUpSignIn] = loginWithPopUp;
+  const [error, setError] = useState();
 
   // create account with email and password
   const createAcc = (email, password) => {
@@ -21,16 +25,17 @@ const AuthManager = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        setLoggedInUser(user);
         console.log(user);
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorMessage);
         // ..
       });
   };
+  console.log("error is", error);
   // create user
   useEffect(() => {
     setCreateUser(() => createAcc);
@@ -59,6 +64,13 @@ const AuthManager = () => {
     setSignInWithEamilAndPssword(() => emailSignIn);
   }, []);
 
+  // pop up sign
+  const popUpSignInFunction = (provider) => {};
+  console.log("my dear you error is  error", error);
+
+  useEffect(() => {
+    setPopUpSignIn(() => popUpSignInFunction);
+  }, []);
   return <div></div>;
 };
 
