@@ -8,10 +8,34 @@ import firebaseConfig from "./firebase.config.js";
 firebase.initializeApp(firebaseConfig);
 
 const AuthManager = () => {
-  const { logingWithEamil } = useContext(UsersContext);
+  const { logingWithEamil, createUserEamil } = useContext(UsersContext);
   const [signInWithEamilAndPssword, setSignInWithEamilAndPssword] =
     logingWithEamil;
+  const [createUser, setCreateUser] = createUserEamil;
 
+  // create account with email and password
+  const createAcc = (email, password) => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        // ..
+      });
+  };
+  // create user
+  useEffect(() => {
+    setCreateUser(() => createAcc);
+  }, []);
+  // sign in with email and password
   const emailSignIn = (email, password) => {
     firebase
       .auth()
@@ -29,6 +53,7 @@ const AuthManager = () => {
       });
     console.log("it the fuj");
   };
+  // create user
 
   useEffect(() => {
     setSignInWithEamilAndPssword(() => emailSignIn);

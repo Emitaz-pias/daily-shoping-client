@@ -18,12 +18,15 @@ function App() {
   const [signInWithEamilAndPssword, setSignInWithEamilAndPssword] = useState(
     () => () => console.log("default blank function")
   );
-  console.log("this is from app ", signInWithEamilAndPssword);
+  const [createUser, setCreateUser] = useState(
+    () => () => console.log("default funtion")
+  );
   return (
     <UsersContext.Provider
       value={{
         user: [loggedInUser, setLoggedInUser],
         product: [selectedProduct, setSeltectedProduct],
+        createUserEamil: [createUser, setCreateUser],
         logingWithEamil: [
           signInWithEamilAndPssword,
           setSignInWithEamilAndPssword,

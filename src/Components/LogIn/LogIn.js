@@ -12,13 +12,20 @@ const LogIn = () => {
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
   const [newUser, setNewUser] = useState(false);
-  const { user, logingWithEamil } = useContext(UsersContext);
+  const { user, logingWithEamil, createUserEamil } = useContext(UsersContext);
   const [loggedInUser, setLoggedInUser] = user;
   const [signInWithEamilAndPssword, setSignInWithEamilAndPssword] =
     logingWithEamil;
+  const [createUser, setCreateUser] = createUserEamil;
 
-  console.log("from log in ", signInWithEamilAndPssword);
+  console.log(
+    "from log in ",
+    signInWithEamilAndPssword,
+    "and this is createUserEamil",
+    createUser
+  );
 
+  // log in button handler
   const handleLogInBtn = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("pass").value;
@@ -26,6 +33,15 @@ const LogIn = () => {
     history.replace(from);
   };
 
+  // create account button handler
+  const handleCreateAccount = () => {
+    const email = document.getElementById("createAccEamil").value;
+    const password = document.getElementById("createAccPass").value;
+    createUser(email, password);
+    alert("congratulaion!! your has been created successfully now log in...");
+    setNewUser(false);
+    console.log(email, password);
+  };
   return (
     <Container>
       <div className="mt-3">
@@ -104,12 +120,14 @@ const LogIn = () => {
                     type="text"
                     placeholder="Email"
                     className="inputStyles form-control"
+                    id="createAccEamil"
                   />
                   <br />
                   <input
                     type="password"
                     placeholder="Password"
                     className="inputStyles form-control"
+                    id="createAccPass"
                   />
                   <br />
                   <input
@@ -119,7 +137,9 @@ const LogIn = () => {
                   />
                 </form>
                 <br />
-                <Button className="customButton">Create Account</Button>
+                <Button onClick={handleCreateAccount} className="customButton">
+                  Create Account
+                </Button>
                 <p className="mt-3 text-center">
                   Already have an account?{" "}
                   <a
