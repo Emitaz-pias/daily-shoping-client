@@ -11,19 +11,18 @@ const PopUpSign = () => {
   const { user, loginWithPopUp } = useContext(UsersContext);
   const [popUpSignIn, setPopUpSignIn] = loginWithPopUp;
   const googleSignInprovider = new firebase.auth.GoogleAuthProvider();
+  var fbSignInprovider = new firebase.auth.FacebookAuthProvider();
+
   console.log("this is pop up sign btn", popUpSignIn);
 
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
-  const handleFbSignIn = () => {
-    // console.log("hello Minu fb sign in button clicked");
-  };
-  const handleGoogleSignIn = () => {
-    // console.log("hello Minu google sign in button clicked");
+
+  const handlePopUpSignIn = (provider) => {
     firebase
       .auth()
-      .signInWithPopup(googleSignInprovider)
+      .signInWithPopup(provider)
       .then((result) => {
         const credential = result.credential;
         console.log("user is ", result.user.displayName);
@@ -35,10 +34,19 @@ const PopUpSign = () => {
       });
     history.replace(from);
   };
+  const handleFbSignIn = (provider) => {
+    handlePopUpSignIn(provider);
+  };
+  const handleGoogleSignIn = (provider) => {
+    handlePopUpSignIn(provider);
+  };
   return (
     <div className="d-flex justify-content-center">
       <div className="">
-        <button onClick={handleFbSignIn} className="mt-3 btn-lg customPopUpBtn">
+        <button
+          onClick={() => handleFbSignIn(fbSignInprovider)}
+          className="mt-3 btn-lg customPopUpBtn"
+        >
           <span className="d-flex justify-content-around mr-2">
             <img className="buttonImg" src={fb} alt="" />
             <span> Continue with facebook</span>
@@ -46,7 +54,7 @@ const PopUpSign = () => {
         </button>
         <br />
         <button
-          onClick={handleGoogleSignIn}
+          onClick={() => handleGoogleSignIn(googleSignInprovider)}
           className="mt-3 btn-lg customPopUpBtn"
         >
           <span className="d-flex justify-content-around mr-2">
