@@ -45,7 +45,6 @@ const Addproduct = () => {
 
   // get the product from user
   const sendProductToDatabase = (data) => {
-    console.log("form submitted", data);
     const addedProduct = {
       name: data.ProductName,
       price: data.Price,

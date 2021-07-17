@@ -19,13 +19,6 @@ const LogIn = () => {
     logingWithEamil;
   const [createUser, setCreateUser] = createUserEamil;
 
-  console.log(
-    "from log in ",
-    signInWithEamilAndPssword,
-    "and this is createUserEamil",
-    createUser
-  );
-
   // log in button handler
   const handleLogInBtn = () => {
     const email = document.getElementById("email").value;
@@ -41,7 +34,6 @@ const LogIn = () => {
     createUser(email, password);
     alert("congratulaion!! your has been created successfully now log in...");
     setNewUser(false);
-    console.log(email, password);
   };
 
   // google sign in button

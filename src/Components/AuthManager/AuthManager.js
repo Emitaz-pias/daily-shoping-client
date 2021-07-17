@@ -14,9 +14,6 @@ const AuthManager = () => {
   const [createUser, setCreateUser] = createUserEamil;
   const [signInWithEamilAndPssword, setSignInWithEamilAndPssword] =
     logingWithEamil;
-  const [popUpSignIn, setPopUpSignIn] = loginWithPopUp;
-  const [error, setError] = useState();
-
   // create account with email and password
   const createAcc = (email, password) => {
     firebase
@@ -25,17 +22,15 @@ const AuthManager = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        setLoggedInUser(user);
-        console.log(user);
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+
         // ..
       });
   };
-  console.log("error is", error);
   // create user
   useEffect(() => {
     setCreateUser(() => createAcc);
@@ -47,8 +42,8 @@ const AuthManager = () => {
       .signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in
-        var user = userCredential.user;
-        console.log(user);
+        const user = userCredential.user;
+        setLoggedInUser(user);
         // ...
       })
       .catch((error) => {
@@ -56,7 +51,6 @@ const AuthManager = () => {
         var errorMessage = error.message;
         console.log(errorMessage);
       });
-    console.log("it the fuj");
   };
   // create user
 
@@ -64,13 +58,6 @@ const AuthManager = () => {
     setSignInWithEamilAndPssword(() => emailSignIn);
   }, []);
 
-  // pop up sign
-  const popUpSignInFunction = (provider) => {};
-  console.log("my dear you error is  error", error);
-
-  useEffect(() => {
-    setPopUpSignIn(() => popUpSignInFunction);
-  }, []);
   return <div></div>;
 };
 

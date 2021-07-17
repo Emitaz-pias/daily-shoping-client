@@ -2,10 +2,11 @@ import React from "react";
 import "./Header.css";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UsersContext } from "../../App";
 const Header = () => {
-  const user = {
-    nae: "pias",
-  };
+  const { user } = useContext(UsersContext);
+  const [loggedInUser, setLoggedInUser] = user;
   const handleLogIn = () => {};
   return (
     <Container>
@@ -44,8 +45,12 @@ const Header = () => {
               Deals
             </Link>
           </Nav.Link>
-          {user.name ? (
-            <img src="/" alt="an image"></img>
+          {loggedInUser.photoURL ? (
+            <img
+              style={{ width: "4em", height: "4em", borderRadius: "40px" }}
+              src={loggedInUser.photoURL}
+              alt="logged in user display pic"
+            ></img>
           ) : (
             <Link className="customLink" to="/logIn">
               <Button

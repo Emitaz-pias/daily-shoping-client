@@ -21,9 +21,7 @@ function App() {
   const [createUser, setCreateUser] = useState(
     () => () => console.log("default funtion")
   );
-  const [popUpSignIn, setPopUpSignIn] = useState(
-    () => () => console.log("defaoult function")
-  );
+
   return (
     <UsersContext.Provider
       value={{
@@ -34,7 +32,6 @@ function App() {
           signInWithEamilAndPssword,
           setSignInWithEamilAndPssword,
         ],
-        loginWithPopUp: [popUpSignIn, setPopUpSignIn],
       }}
     >
       <Router>

@@ -9,24 +9,21 @@ import { useHistory, useLocation } from "react-router";
 
 const PopUpSign = () => {
   const { user, loginWithPopUp } = useContext(UsersContext);
-  const [popUpSignIn, setPopUpSignIn] = loginWithPopUp;
+  const [loggedInUser, setLoggedInUser] = user;
   const googleSignInprovider = new firebase.auth.GoogleAuthProvider();
-  var fbSignInprovider = new firebase.auth.FacebookAuthProvider();
-
-  console.log("this is pop up sign btn", popUpSignIn);
+  const fbSignInprovider = new firebase.auth.FacebookAuthProvider();
 
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
-
   const handlePopUpSignIn = (provider) => {
     firebase
       .auth()
       .signInWithPopup(provider)
       .then((result) => {
-        const credential = result.credential;
-        console.log("user is ", result.user.displayName);
-        const token = credential.accessToken;
+        setLoggedInUser(result.user);
+        storeToken();
+        history.replace(from);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -39,6 +36,19 @@ const PopUpSign = () => {
   };
   const handleGoogleSignIn = (provider) => {
     handlePopUpSignIn(provider);
+  };
+  const storeToken = () => {
+    firebase
+      .auth()
+      .currentUser.getIdToken(/* forceRefresh */ true)
+      .then(function (idToken) {
+        // Send token to your backend via HTTPS
+        sessionStorage.setItem("token", idToken);
+      })
+      .catch(function (error) {
+        // Handle error
+        console.log("id token error is ", error);
+      });
   };
   return (
     <div className="d-flex justify-content-center">

@@ -9,11 +9,19 @@ const Orders = () => {
   const { user } = useContext(UsersContext);
   const [loggedInUser, setLoggedInUser] = user;
   const [orders, setOrders] = useState([]);
+  console.log("logged in user with id token from order", loggedInUser.idToken);
   useEffect(() => {
-    fetch(`http://localhost:8080/email=${loggedInUser.email}`)
+    fetch(`http://localhost:8080/orders?email=${loggedInUser.email}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: "Bearer " + sessionStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
+  console.log("token in ", sessionStorage.getItem("token"));
   return (
     <div>
       <Header />

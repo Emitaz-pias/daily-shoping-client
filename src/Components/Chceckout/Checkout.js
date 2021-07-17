@@ -22,7 +22,6 @@ const Checkout = () => {
   const [orderClicked, setOrderClicked] = useState(false);
   const [order, setOrder] = useState({});
   const [orderPlaced, setOrderPlaced] = useState(false);
-  console.log("your selected product is", selectProduct);
   const handleCheckOut = () => {
     setOrderClicked(true);
   };
