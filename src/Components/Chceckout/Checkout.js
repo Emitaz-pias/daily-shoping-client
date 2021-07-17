@@ -29,7 +29,7 @@ const Checkout = () => {
     const order = { ...selectProduct };
     order.orderDate = new Date();
     order.email = user.Email;
-    order.name = user.Name;
+    order.ownerName = user.Name;
     order.address = user.Address;
     const newOrder = order;
     setOrder(newOrder);
