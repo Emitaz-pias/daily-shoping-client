@@ -26,12 +26,18 @@ const Checkout = () => {
     setOrderClicked(true);
   };
   const onPlaceOrder = (user) => {
-    const order = { ...selectProduct, user };
+    const order = { ...selectProduct };
     order.orderDate = new Date();
+    order.email = user.Email;
+    order.name = user.Name;
+    order.address = user.Address;
     const newOrder = order;
     setOrder(newOrder);
     setOrderPlaced(true);
     document.getElementById("orderArea").style.display = "none";
+    alert(
+      "your order has been placed now go to orders page to see all of your orders"
+    );
   };
 
   // place order to database

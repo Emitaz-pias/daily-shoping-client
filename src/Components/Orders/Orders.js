@@ -9,7 +9,6 @@ const Orders = () => {
   const { user } = useContext(UsersContext);
   const [loggedInUser, setLoggedInUser] = user;
   const [orders, setOrders] = useState([]);
-  console.log("logged in user with id token from order", loggedInUser.idToken);
   useEffect(() => {
     fetch(`http://localhost:8080/orders?email=${loggedInUser.email}`, {
       method: "GET",
@@ -21,7 +20,7 @@ const Orders = () => {
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
-  console.log("token in ", sessionStorage.getItem("token"));
+  console.log("orders", orders);
   return (
     <div>
       <Header />
@@ -79,14 +78,12 @@ const Orders = () => {
               {/* owersDetails */}
               <div className="col-md-5 d-flex  justify-content-around">
                 <div className=" descriptionContainerHeader  ">
-                  <h6>Emtiaz pias {order.user.name}</h6>
+                  <h6>Emtiaz pias {order.name}</h6>
                 </div>
                 <div className="qtyPriceContainerHeader  w-75 ml-5 pl-5 d-flex justify-content-around">
-                  <h6>
-                    Emtiazpias@gmailcom como com ocmoc com {order.user.email}
-                  </h6>
+                  <h6>Emtiazpias@gmailcom como com ocmoc com {order.email}</h6>
                   <h6 className="pl-5">
-                    Pirujali Gazipur dhaka bangladesh {order.user.address}
+                    Pirujali Gazipur dhaka bangladesh {order.address}
                   </h6>
                 </div>
               </div>
