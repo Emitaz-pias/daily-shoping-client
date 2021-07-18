@@ -20,7 +20,7 @@ const ManageProducts = () => {
   const handleDeleteProduct = (id) => {
     fetch(`http://localhost:8080/product/${id}`, { method: "DELETE" })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log("product deleted", data));
   };
 
   return (
