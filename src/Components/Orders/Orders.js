@@ -24,7 +24,6 @@ const Orders = () => {
         setOrders(data);
       });
   }, []);
-  console.log("orders", orders);
   return (
     <div>
       {dataLoaded ? (
