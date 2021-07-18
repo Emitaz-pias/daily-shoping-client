@@ -9,7 +9,7 @@ const ManageProducts = () => {
   const [dataLoaded, setDataLoaded] = useState(false);
   // load product from database
   useEffect(() => {
-    fetch("http://localhost:8080/manageProducts")
+    fetch("https://dailyshopping.herokuapp.com/manageProducts")
       .then((res) => res.json())
       .then((data) => {
         setDataLoaded(true);
@@ -18,7 +18,7 @@ const ManageProducts = () => {
   }, [products]);
   // delete product when button is clicked
   const handleDeleteProduct = (id) => {
-    fetch(`http://localhost:8080/product/${id}`, { method: "DELETE" })
+    fetch(`https://dailyshopping.herokuapp.com/product/${id}`, { method: "DELETE" })
       .then((res) => res.json())
       .then((data) => console.log("product deleted", data));
   };

@@ -43,7 +43,7 @@ const Checkout = () => {
   // place order to database
   useEffect(() => {
     if (order && orderPlaced === true) {
-      fetch("http://localhost:8080/placeOrder", {
+      fetch("https://dailyshopping.herokuapp.com/placeOrder", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(order),

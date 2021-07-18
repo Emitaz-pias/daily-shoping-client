@@ -11,13 +11,16 @@ const Orders = () => {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:8080/orders?email=${loggedInUser.email}`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        authorization: "Bearer " + sessionStorage.getItem("token"),
-      },
-    })
+    fetch(
+      `https://dailyshopping.herokuapp.com/orders?email=${loggedInUser.email}`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: "Bearer " + sessionStorage.getItem("token"),
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setDataLoaded(true);

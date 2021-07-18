@@ -62,7 +62,7 @@ const Addproduct = () => {
   // submit the data to the database ..
   useEffect(() => {
     if (addededProduct && imageUploaded === true) {
-      fetch("http://localhost:8080/addProduct", {
+      fetch("https://dailyshopping.herokuapp.com/addProduct", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(addededProduct),
