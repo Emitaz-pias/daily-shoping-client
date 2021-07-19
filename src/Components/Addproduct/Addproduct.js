@@ -62,13 +62,16 @@ const Addproduct = () => {
   // submit the data to the database ..
   useEffect(() => {
     if (addededProduct && imageUploaded === true) {
-      fetch("https://mysterious-tor-24596.herokuapp.com/addProduct", {
+      fetch("http://localhost:8080/addProduct", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(addededProduct),
       })
         .then((res) => res.json())
-        .then((data) => setProductAdded(data));
+        .then((data) => {
+          console.log("product added data", data);
+          setProductAdded(data);
+        });
     }
   }, [addededProduct, imageUploaded]);
 

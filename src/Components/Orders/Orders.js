@@ -12,7 +12,7 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     fetch(
-      `https://dailyshopping.herokuapp.com/orders?email=${loggedInUser.email}`,
+      `https://dailyshopping.netlify.app/orders?email=${loggedInUser.email}`,
       {
         method: "GET",
         headers: {
