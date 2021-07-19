@@ -14,7 +14,7 @@ const Home = () => {
   // load data from database
 
   useEffect(() => {
-    fetch("https://dailyshopping.herokuapp.com/products")
+    fetch("https://mysterious-tor-24596.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setDataLoaded(true);

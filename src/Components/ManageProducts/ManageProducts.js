@@ -9,7 +9,7 @@ const ManageProducts = () => {
   const [dataLoaded, setDataLoaded] = useState(false);
   // load product from database
   useEffect(() => {
-    fetch("https://dailyshopping.herokuapp.com/manageProducts")
+    fetch("https://mysterious-tor-24596.herokuapp.com/manageProducts")
       .then((res) => res.json())
       .then((data) => {
         setDataLoaded(true);
@@ -18,7 +18,9 @@ const ManageProducts = () => {
   }, [products]);
   // delete product when button is clicked
   const handleDeleteProduct = (id) => {
-    fetch(`https://dailyshopping.herokuapp.com/product/${id}`, { method: "DELETE" })
+    fetch(`https://mysterious-tor-24596.herokuapp.com/product/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => console.log("product deleted", data));
   };
