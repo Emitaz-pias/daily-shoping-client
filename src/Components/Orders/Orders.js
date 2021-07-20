@@ -12,7 +12,7 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     fetch(
-      `https://dailyshopping.netlify.app/orders?email=${loggedInUser.email}`,
+      `https://mysterious-tor-24596.herokuapp.com/orders?email=${loggedInUser.email}`,
       {
         method: "GET",
         headers: {
@@ -35,7 +35,7 @@ const Orders = () => {
           {/* full order page */}
           <div>
             <h2 className="mt-2 mb-3" style={{ color: "#363958" }}>
-              here is Your Orders!!
+              hi,{loggedInUser.displayName} here is Your Orders!!
             </h2>
             {/* full shadow box */}
             <div className="row  shadow p-3 mb-5 bg-body rounded">
